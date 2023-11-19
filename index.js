@@ -7,9 +7,9 @@ let showDate = true;
 
 function animate() {
   const date = new Date();
-  const hour = date.getHours();
-  const minute = date.getMinutes();
-  const second = date.getSeconds();
+  const hour = date.getHours() + date.getMinutes() / 60;
+  const minute = date.getMinutes() + date.getSeconds() / 60;
+  const second = date.getSeconds() + date.getMilliseconds() / 1000;
   const day = date.getDate();
   const ampm = date.getHours() >= 12 ? "PM" : "AM";
 
