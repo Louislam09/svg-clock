@@ -3,31 +3,40 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-color: #3498db;
+  --background-color: #ecf0f1;
+  --text-color-primary: #2c3e50;
+  --text-color-secondary: #7f8c8d;
+  --accent-color: #e74c3c;
+}
+
 body {
   width: 100%;
   height: 100vh;
   display: grid;
   place-items: center;
-  background-color: #7b0828;
+  background-color: var(--main-color);
 }
 
 .hour_marker {
   fill: transparent;
-  stroke: #f0f0c9;
+  stroke: var(--text-color-secondary);
   stroke-width: 7;
   stroke-dasharray: 0.2 4.8;
   stroke-dashoffset: 0.1;
 }
+
 .minute_marker {
   fill: transparent;
-  stroke: #0f0e0e;
+  stroke: var(--text-color-primary);
   stroke-width: 7;
   stroke-dasharray: 0.2 0.8;
   stroke-dashoffset: 0.1;
 }
 
 .hand {
-  stroke: #fff;
+  stroke: var(--text-color-primary);
   stroke-width: 2;
   stroke-linecap: round;
 }
@@ -35,20 +44,39 @@ body {
 .hand--thick {
   stroke-width: 7;
 }
+
 .hand--second {
-  stroke: yellow;
+  stroke: var(--text-color-primary);
 }
 
 .center {
-  fill: #7b0829;
+  fill: var(--main-color);
   stroke-width: 2;
-  stroke: white;
+  stroke: var(--text-color-primary);
 }
 
 .text {
-  fill: #f0f0c9;
+  fill: var(--text-color-primary);
   font-family: Arial, Helvetica, sans-serif;
   text-anchor: middle;
   cursor: pointer;
   user-select: none;
+}
+
+label {
+  border: 2px solid var(--text-color-primary);
+  padding: 10px;
+  text-align: center;
+  color: var(--text-color-primary);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+input {
+  visibility: hidden;
 }
